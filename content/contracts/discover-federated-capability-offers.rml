@@ -1,0 +1,9 @@
+#lang rmn/v2
+(map
+  ("type" "FederatedCapabilityOfferDiscoveryLaw")
+  ("version" 3)
+  ("provider" "urn:ame:federated-capability-offer-discovery-cell")
+  ("precondition" "The customer supplies one exact operation, one finite duplicate-free denominator of public ActivityPub outboxes with expected actors and A2A Agent Cards, a bounded candidate maximum, and an evaluation instant.")
+  ("operation" "Hire the ActivityPub observation provider for each exact outbox, admit only public Offer activities carrying canonical RMN capability offers bound to one stable canonical RMN cell identity and one canonical RMN StockKeepingUnit product identity, and return matching unexpired candidates with cell, SKU, publisher, provider, law, Agent Card, price, and semantic identities preserved.")
+  ("postcondition" "Return one content-identified denominator-bounded discovery result and append the cell's receipt through its hired RWIL/RDF provider without selecting, authorizing, invoking, paying, or attesting a provider.")
+  ("refusal" "Refuse ambient crawling, duplicate or unbounded endpoints, private activity, malformed or noncanonical RMN, changed publisher or Agent Card identity, an expired offer, provider selection, authority issuance, invocation, payment, or a completeness claim beyond the supplied denominator."))

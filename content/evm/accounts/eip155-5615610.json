@@ -1,0 +1,28 @@
+{
+  "profile": "org.emsenn.evm.sovereign-enterprise-account.v3",
+  "enterprise": {
+    "nodeId": "federated-capability-offer-discovery-cell",
+    "urn": "urn:ame:federated-capability-offer-discovery-cell",
+    "enterpriseId": "0xe89e92306d5c319588041fd57f9f043c1b6b476f7c7304caadd4c63a67d758e0"
+  },
+  "chain": {
+    "chainId": 5615610,
+    "caip2": "eip155:5615610"
+  },
+  "account": {
+    "address": "0x950845218f583b14b3b9447ac69c871eaaace1d8",
+    "caip10": "eip155:5615610:0x950845218f583b14b3b9447ac69c871eaaace1d8"
+  },
+  "factory": {
+    "address": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "userSalt": "0x1b35766194f90443a06ed119c534a76494e154df01da165f66f4e68f8274152a"
+  },
+  "policy": {
+    "signer": "0x8936dcf4c1f5c5f4761cba6cd3c471a5f0f1e64f",
+    "custody": "settlement-private"
+  },
+  "deployment": {
+    "transaction": "0xa36ef9843721f83879131db22daa4ae72d2858c7a5e6e03498bf035b051b3c9d",
+    "block": 19
+  }
+}

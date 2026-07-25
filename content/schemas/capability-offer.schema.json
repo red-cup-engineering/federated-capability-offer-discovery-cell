@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://red-cup-engineering.github.io/federated-capability-offer-discovery-cell/schemas/capability-offer.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "cell", "sku", "provider", "operation", "law", "agentCard", "authorization", "price", "expiresAt"],
+  "properties": {
+    "kind": {"const": "org.emsenn.capability-offer.v3"},
+    "cell": {"type": "string", "pattern": "^ni:///sha-256;[A-Za-z0-9_-]{43}$"},
+    "sku": {"type": "string", "pattern": "^ni:///sha-256;[A-Za-z0-9_-]{43}$"},
+    "provider": {"type": "string", "pattern": "^urn:ame:"},
+    "operation": {"type": "string", "minLength": 1},
+    "law": {"type": "string", "pattern": "^ni:///sha-256;[A-Za-z0-9_-]{43}$"},
+    "agentCard": {"type": "string", "format": "uri"},
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile", "grantRequired"],
+      "properties": {
+        "profile": {"enum": ["OCapN", "none"]},
+        "grantRequired": {"type": "boolean"}
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocol", "asset", "amount", "network"],
+      "properties": {
+        "protocol": {"const": "x402"},
+        "asset": {"type": "string", "minLength": 1},
+        "amount": {"type": "string", "pattern": "^[0-9]+$"},
+        "network": {"type": "string", "minLength": 1}
+      }
+    },
+    "expiresAt": {"type": "string", "format": "date-time"}
+  }
+}

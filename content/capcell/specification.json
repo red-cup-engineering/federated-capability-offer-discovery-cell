@@ -1,0 +1,17 @@
+{
+  "name": "federated-capability-offer-discovery",
+  "description": "Discover canonical RMN capability offers from an exact finite denominator of public ActivityPub outboxes.",
+  "package": {
+    "name": "@red-cup-engineering/federated-capability-offer-discovery-cell",
+    "version": "0.1.0",
+    "entrypoint": "./lib/discovery.mjs"
+  },
+  "operation": {
+    "name": "discover-federated-capability-offers",
+    "inputSchema": "content/schemas/discovery-request.schema.json",
+    "outputSchema": "content/schemas/discovery-result.schema.json",
+    "refusalSchema": "content/schemas/discovery-refusal.schema.json"
+  },
+  "rmnLaw": "content/contracts/discover-federated-capability-offers.rml"
+}
+

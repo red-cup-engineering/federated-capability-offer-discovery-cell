@@ -1,0 +1,56 @@
+{
+  "name": "@red-cup-engineering/federated-capability-offer-discovery-cell",
+  "version": "0.3.0",
+  "description": "One Capability Cell that discovers canonical RMN capability offers across an exact finite set of public ActivityPub outboxes.",
+  "type": "module",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/red-cup-engineering/federated-capability-offer-discovery-cell.git"
+  },
+  "files": ["bin", "content", "lib", "ops", "src"],
+  "exports": {
+    ".": "./lib/discovery.mjs",
+    "./protocol": "./src/protocol.mjs"
+  },
+  "bin": {
+    "serve-federated-capability-offer-discovery": "./bin/server.mjs",
+    "serve-federated-capability-offer-discovery-activitypub": "./bin/activitypub-server.mjs"
+  },
+  "scripts": {
+    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/server.mjs && node --check bin/activitypub-server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "npm run check && npm test"
+  },
+  "engines": {"node": ">=22"},
+  "dependencies": {
+    "@a2a-js/sdk": "1.0.0-beta.0",
+    "@emsenn/a2a-contracted-agent-service": "file:../../../a2a-services-section/services/a2a-contracted-agent-service",
+    "@emsenn/a2a-sovereign-operation-boundary-service": "file:../../../a2a-services-section/services/a2a-sovereign-operation-boundary-service",
+    "@emsenn/activitypub-services-section": "file:../../../activitypub-services-section",
+    "@emsenn/rmn-semantic-conformance": "file:../../../../../../../lenticule-science/services/obsmetrological-services-section/services/rmn-semantic-conformance",
+    "@emsenn/rwil-rdf-services": "file:../../../../../../../lenticule-science/services/obsmetrological-services-section/services/rwil-rdf-services"
+  },
+  "x-agentic-metro-enterprise": {
+    "node-id": "federated-capability-offer-discovery-cell",
+    "actor": "urn:ame:federated-capability-offer-discovery-cell",
+    "organizational-kind": "capability-cell",
+    "owners": ["capability-marketplace-services-section"],
+    "membrane": {"law": "lib/", "lasting-instances": "content/", "append-only-instances": "data/"},
+    "admission": "one canonical RMN request naming a nonempty operation and an exact finite set of public ActivityPub outboxes",
+    "refusal": "ambient crawl, private activity, unbounded denominator, malformed offer, provider selection, authorization, invocation, payment, or completeness beyond the supplied denominator",
+    "operation-catalog": {
+      "discover-federated-capability-offers": {
+        "lawSource": "content/contracts/discover-federated-capability-offers.rml",
+        "inputSchema": "content/schemas/discovery-request.schema.json",
+        "outputSchema": "content/schemas/discovery-result.schema.json",
+        "refusalSchema": "content/schemas/discovery-refusal.schema.json",
+        "protocol": "A2A 1.0 through a separately hireable protocol provider",
+        "publication": "ActivityPub through a separately hireable protocol provider",
+        "chain": "eip155:5615610",
+        "legacyCompatibility": false
+      }
+    }
+  }
+}

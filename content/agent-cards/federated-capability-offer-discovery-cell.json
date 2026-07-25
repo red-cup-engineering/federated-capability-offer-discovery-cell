@@ -1,0 +1,60 @@
+{
+  "name": "Federated Capability Offer Discovery Cell",
+  "description": "Discovers canonical RMN capability offers from one exact finite denominator of public ActivityPub outboxes; it does not select, authorize, pay, or invoke a provider.",
+  "supportedInterfaces": [
+    {
+      "url": "${BASE_URL}/a2a/jsonrpc",
+      "protocolBinding": "JSONRPC",
+      "tenant": "",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "${BASE_URL}/a2a/rest",
+      "protocolBinding": "HTTP+JSON",
+      "tenant": "",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "url": "https://bare-cedar-fog.561.group/",
+    "organization": "Red Cup Engineering — Capability Marketplace Services Section"
+  },
+  "version": "0.3.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "ni:///sha-256;uunL_W-1ylRh092ERDNXT378x_Hd5ndnHmPDY-skIjk",
+        "description": "Exact RMN law for bounded federated capability-offer discovery.",
+        "required": false,
+        "params": {
+          "profile": "org.emsenn.capability-offer-discovery.cell.v3",
+          "actor": "urn:ame:federated-capability-offer-discovery-cell",
+          "cell": "ni:///sha-256;N3uhukrVV1WpenGlzZTwH0N75wzafq2NHz4qAFDPD1U",
+          "law": "ni:///sha-256;uunL_W-1ylRh092ERDNXT378x_Hd5ndnHmPDY-skIjk",
+          "sku": "ni:///sha-256;1tbycZv3ecewPXqUE0ksFEGHK9jmOIujeZz9IhO3hxI",
+          "account": "eip155:5615610:0x950845218f583b14b3b9447ac69c871eaaace1d8"
+        }
+      }
+    ],
+    "extendedAgentCard": false
+  },
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "defaultInputModes": ["application/rmn+cbor"],
+  "defaultOutputModes": ["application/rmn+cbor"],
+  "skills": [
+    {
+      "id": "discover-federated-capability-offers",
+      "name": "Discover federated capability offers",
+      "description": "Observe a supplied bounded set of ActivityPub outboxes and return matching unexpired canonical RMN offers plus witnessed endpoint refusals.",
+      "tags": ["activitypub", "a2a", "rmn", "capability-marketplace", "eip155:5615610"],
+      "examples": [],
+      "inputModes": ["application/rmn+cbor"],
+      "outputModes": ["application/rmn+cbor"],
+      "securityRequirements": []
+    }
+  ],
+  "signatures": []
+}

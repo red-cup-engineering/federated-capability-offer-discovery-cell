@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://red-cup-engineering.github.io/federated-capability-offer-discovery-cell/schemas/discovery-refusal.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "reason"],
+  "properties": {
+    "kind": {"const": "org.emsenn.capability-offer-discovery.refusal.v1"},
+    "reason": {"type": "string", "minLength": 1}
+  }
+}
+
