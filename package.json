@@ -29,7 +29,7 @@
     "@emsenn/a2a-contracted-agent-service": "file:../../../a2a-services-section/services/a2a-contracted-agent-service",
     "@emsenn/a2a-sovereign-operation-boundary-service": "file:../../../a2a-services-section/services/a2a-sovereign-operation-boundary-service",
     "@emsenn/activitypub-services-section": "file:../../../activitypub-services-section",
-    "@emsenn/rmn-semantic-conformance": "file:../../../../../../../lenticule-science/services/obsmetrological-services-section/services/rmn-semantic-conformance",
+    "@emsenn/rmn-semantic-conformance": "file:../../../../../model-services-section/services/relational-model-services-section/services/relational-model-notation-services-section/services/rmn-conformance-service",
     "@emsenn/rwil-rdf-services": "file:../../../../../../../lenticule-science/services/obsmetrological-services-section/services/rwil-rdf-services"
   },
   "x-agentic-metro-enterprise": {
