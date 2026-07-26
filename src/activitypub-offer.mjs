@@ -9,7 +9,7 @@ export const DISCOVERY_OFFER = Object.freeze({
   provider: "urn:ame:federated-capability-offer-discovery-cell",
   operation: "discover-federated-capability-offers",
   law: "ni:///sha-256;uunL_W-1ylRh092ERDNXT378x_Hd5ndnHmPDY-skIjk",
-  agentCard: "https://bare-cedar-fog.561.group/a2a/capability-offer-discovery/.well-known/agent-card.json",
+  agentCard: "https://federated-capability-offer-discovery-cell-a2d7mjqbfa-uc.a.run.app/.well-known/agent-card.json",
   authorization: Object.freeze({ profile: "none", grantRequired: false }),
   price: Object.freeze({ protocol: "x402", asset: "USD", amount: "0", network: "eip155:5615610" }),
   expiresAt: "2027-07-25T00:00:00.000Z"
