@@ -1,5 +1,5 @@
 import {resolve} from "node:path";
-import {loadBoundRuntime} from "@emsenn/a2a-sovereign-operation-boundary-service";
+import {loadBoundRuntime} from "@red-cup-engineering/a2a-sovereign-operation-boundary-service";
 
 const ROOT = resolve(import.meta.dirname, "..");
 

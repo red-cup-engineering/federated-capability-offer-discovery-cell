@@ -6,7 +6,7 @@
   "runtimeAdapterModule": "./src/adapter.mjs",
   "requiredProviders": [
     "activitypub-services-section/observe-addressed-rmn-outbox",
-    "rwil-rdf-services/serve-rwil-rdf-a2a"
+    "rwil-rdf-projection-service/serve-rwil-rdf-a2a"
   ],
   "writableRoots": ["data/"],
   "ambientFilesystemRead": false,

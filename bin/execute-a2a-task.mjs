@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {readFileSync} from "node:fs";
 import {pathToFileURL} from "node:url";
-import {executeRelationalOperationMessage} from "@emsenn/a2a-sovereign-operation-boundary-service";
+import {executeRelationalOperationMessage} from "@red-cup-engineering/a2a-sovereign-operation-boundary-service";
 import {discoverFederatedCapabilityOffers} from "../lib/discovery.mjs";
 import {discoveryProtocol} from "../src/protocol.mjs";
 import {loadDiscoveryRuntime} from "../src/runtime.mjs";

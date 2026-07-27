@@ -9,7 +9,13 @@
     "type": "git",
     "url": "https://github.com/red-cup-engineering/federated-capability-offer-discovery-cell.git"
   },
-  "files": ["bin", "content", "lib", "ops", "src"],
+  "files": [
+    "bin",
+    "content",
+    "lib",
+    "ops",
+    "src"
+  ],
   "exports": {
     ".": "./lib/discovery.mjs",
     "./protocol": "./src/protocol.mjs"
@@ -23,21 +29,29 @@
     "test": "node --test test/*.test.mjs",
     "verify": "npm run check && npm test"
   },
-  "engines": {"node": ">=22"},
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "@a2a-js/sdk": "1.0.0-beta.0",
-    "@emsenn/a2a-contracted-agent-service": "file:../../../a2a-services-section/services/a2a-contracted-agent-service",
-    "@emsenn/a2a-sovereign-operation-boundary-service": "file:../../../a2a-services-section/services/a2a-sovereign-operation-boundary-service",
-    "@emsenn/activitypub-services-section": "file:../../../activitypub-services-section",
-    "@emsenn/rmn-semantic-conformance": "file:../../../../../model-services-section/services/relational-model-services-section/services/relational-model-notation-services-section/services/rmn-conformance-service",
-    "@emsenn/rwil-rdf-services": "file:../../../../../../../lenticule-science/services/obsmetrological-services-section/services/rwil-rdf-services"
+    "@red-cup-engineering/a2a-contracted-agent-service": "2.0.0",
+    "@red-cup-engineering/a2a-sovereign-operation-boundary-service": "1.0.0",
+    "@red-cup-engineering/activitypub-services-section": "1.0.0",
+    "@red-cup-engineering/rmn-semantic-conformance": "6.0.0",
+    "@lenticule-science/rwil-rdf-projection-service": "1.0.0"
   },
   "x-agentic-metro-enterprise": {
     "node-id": "federated-capability-offer-discovery-cell",
     "actor": "urn:ame:federated-capability-offer-discovery-cell",
     "organizational-kind": "capability-cell",
-    "owners": ["capability-marketplace-services-section"],
-    "membrane": {"law": "lib/", "lasting-instances": "content/", "append-only-instances": "data/"},
+    "owners": [
+      "capability-marketplace-services-section"
+    ],
+    "membrane": {
+      "law": "lib/",
+      "lasting-instances": "content/",
+      "append-only-instances": "data/"
+    },
     "admission": "one canonical RMN request naming a nonempty operation and an exact finite set of public ActivityPub outboxes",
     "refusal": "ambient crawl, private activity, unbounded denominator, malformed offer, provider selection, authorization, invocation, payment, or completeness beyond the supplied denominator",
     "operation-catalog": {
@@ -52,5 +66,23 @@
         "legacyCompatibility": false
       }
     }
+  },
+  "x-semiotic-voxel": {
+    "profile": "org.harmonious-union.semiotic-voxel.v1",
+    "owner": "red-cup-engineering",
+    "kind": "capability-cell",
+    "actor": "urn:ame:federated-capability-offer-discovery-cell",
+    "operations": [
+      "discover-federated-capability-offers"
+    ],
+    "capabilities": [
+      {
+        "capability": "federated-capability-offer-discovery-cell",
+        "faces": [
+          "discover-federated-capability-offers"
+        ]
+      }
+    ],
+    "package": "@red-cup-engineering/federated-capability-offer-discovery-cell"
   }
 }

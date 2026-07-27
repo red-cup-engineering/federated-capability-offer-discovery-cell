@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {semanticBytes, semanticId} from "@emsenn/rmn-semantic-conformance";
-import {encodeRelationalValue} from "@emsenn/rmn-semantic-conformance/relational-value";
+import {semanticBytes, semanticId} from "@red-cup-engineering/rmn-semantic-conformance";
+import {encodeRelationalValue} from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
 import {discoverFederatedCapabilityOffers} from "../lib/discovery.mjs";
 
 const ACTOR = "https://seller.example/actors/seller";

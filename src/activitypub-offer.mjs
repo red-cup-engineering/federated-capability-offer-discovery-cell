@@ -1,6 +1,6 @@
-import { materializeRmnActivity, ACTIVITYSTREAMS_PUBLIC } from "@emsenn/activitypub-services-section/rmn-activity";
-import { semanticBytes } from "@emsenn/rmn-semantic-conformance";
-import { encodeRelationalValue } from "@emsenn/rmn-semantic-conformance/relational-value";
+import { materializeRmnActivity, ACTIVITYSTREAMS_PUBLIC } from "@red-cup-engineering/activitypub-services-section/rmn-activity";
+import { semanticBytes } from "@red-cup-engineering/rmn-semantic-conformance";
+import { encodeRelationalValue } from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
 
 export const DISCOVERY_OFFER = Object.freeze({
   kind: "org.emsenn.capability-offer.v3",

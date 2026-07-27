@@ -12,7 +12,7 @@ RUN npm install -g npm@11 \
 ENV NODE_ENV=production \
     HOST=0.0.0.0 \
     PORT=8080 \
-    A2A_TASK_STORE_ROOT=/var/lib/capability-offer-discovery/a2a/tasks \
+ \
     CAPABILITY_OFFER_DISCOVERY_DATA_ROOT=/var/lib/capability-offer-discovery/settlement \
     SETTLEMENT_CAIP2=eip155:5615610
 USER node

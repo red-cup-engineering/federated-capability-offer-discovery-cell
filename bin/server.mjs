@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {resolve} from "node:path";
-import {serveContractedAgent} from "@emsenn/a2a-contracted-agent-service";
+import {serveContractedAgent} from "@red-cup-engineering/a2a-contracted-agent-service";
 
 const port = Number(process.env.PORT ?? 15613);
 const host = process.env.HOST ?? "127.0.0.1";
