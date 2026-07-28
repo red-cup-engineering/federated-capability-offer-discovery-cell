@@ -2,9 +2,11 @@
 import { randomBytes } from "node:crypto";
 import { serveActivityPubProvider } from "@red-cup-engineering/activitypub-services-section/server";
 import { createDiscoveryOfferOutbox } from "../src/activitypub-offer.mjs";
+import { createActivityPubR2Custody } from "../src/activitypub-r2-custody.mjs";
 
 const origin = process.env.ACTIVITYPUB_ORIGIN ?? "https://bare-cedar-fog.561.group";
 const identifier = process.env.ACTIVITYPUB_IDENTIFIER ?? "capability-offer-discovery";
+const custody = createActivityPubR2Custody({ actor: identifier });
 
 serveActivityPubProvider({
   origin,
@@ -12,7 +14,9 @@ serveActivityPubProvider({
   actorName: "Federated Capability Offer Discovery Cell",
   summary: "Publishes and executes bounded discovery of canonical RMN capability offers.",
   keyPath: process.env.ACTIVITYPUB_KEYS_PATH,
-  statePath: process.env.ACTIVITYPUB_STATE_PATH,
+  kv: custody.kv,
+  inbox: custody.inbox,
+  queue: custody.queue,
   hostname: process.env.HOST ?? "127.0.0.1",
   port: Number(process.env.PORT ?? "15614"),
   bearerToken: randomBytes(32).toString("base64url"),

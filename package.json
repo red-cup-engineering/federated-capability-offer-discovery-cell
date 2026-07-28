@@ -25,7 +25,7 @@
     "serve-federated-capability-offer-discovery-activitypub": "./bin/activitypub-server.mjs"
   },
   "scripts": {
-    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/server.mjs && node --check bin/activitypub-server.mjs",
+    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check src/activitypub-r2-custody.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/server.mjs && node --check bin/activitypub-server.mjs",
     "test": "node --test test/*.test.mjs",
     "verify": "npm run check && npm test"
   },
@@ -34,10 +34,11 @@
   },
   "dependencies": {
     "@a2a-js/sdk": "1.0.0-beta.0",
-    "@red-cup-engineering/a2a-contracted-agent-service": "2.0.0",
+    "@red-cup-engineering/a2a-contracted-agent-service": "2.0.4",
     "@red-cup-engineering/a2a-sovereign-operation-boundary-service": "1.0.0",
     "@red-cup-engineering/activitypub-services-section": "1.0.0",
     "@red-cup-engineering/rmn-semantic-conformance": "6.0.0",
+    "@red-cup-engineering/resource-brokerage-service-section": "2.0.3",
     "@lenticule-science/rwil-rdf-projection-service": "1.0.0"
   },
   "x-agentic-metro-enterprise": {
