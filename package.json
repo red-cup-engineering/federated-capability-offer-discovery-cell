@@ -21,11 +21,10 @@
     "./protocol": "./src/protocol.mjs"
   },
   "bin": {
-    "serve-federated-capability-offer-discovery": "./bin/server.mjs",
     "serve-federated-capability-offer-discovery-activitypub": "./bin/activitypub-server.mjs"
   },
   "scripts": {
-    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check src/activitypub-r2-custody.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/server.mjs && node --check bin/activitypub-server.mjs",
+    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check src/activitypub-r2-custody.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/activitypub-server.mjs",
     "test": "node --test test/*.test.mjs",
     "verify": "npm run check && npm test"
   },
