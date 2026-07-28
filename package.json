@@ -39,7 +39,7 @@
     "@red-cup-engineering/activitypub-services-section": "1.0.0",
     "@red-cup-engineering/rmn-semantic-conformance": "6.0.0",
     "@red-cup-engineering/resource-brokerage-service-section": "2.0.3",
-    "@lenticule-science/rwil-rdf-projection-service": "1.0.0"
+    "@lenticule-science/rwil-rdf-projection-service": "1.0.2"
   },
   "x-agentic-metro-enterprise": {
     "node-id": "federated-capability-offer-discovery-cell",

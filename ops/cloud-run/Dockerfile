@@ -2,7 +2,7 @@
 FROM node:22.18-bookworm-slim AS runtime
 
 COPY --chown=node:node lib /app/lib
-WORKDIR /app/lib/emsenn/services/561-group/services/red-cup-engineering/services/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell
+WORKDIR /app/lib/emsenn/services/561-group/services/red-cup-engineering/services/software-services-section/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell
 RUN npm install -g npm@11 \
     && rm -f package-lock.json \
     && npm install --omit=dev --install-links \

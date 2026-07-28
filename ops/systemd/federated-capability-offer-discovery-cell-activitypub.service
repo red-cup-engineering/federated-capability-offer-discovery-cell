@@ -5,14 +5,14 @@ Wants=network-online.target
 
 [Service]
 Type=exec
-WorkingDirectory=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell
+WorkingDirectory=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/software-services-section/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell
 Environment=NODE_ENV=production
 Environment=HOST=127.0.0.1
 Environment=PORT=15614
 Environment=ACTIVITYPUB_ORIGIN=https://bare-cedar-fog.561.group
 Environment=ACTIVITYPUB_IDENTIFIER=capability-offer-discovery
-Environment=ACTIVITYPUB_KEYS_PATH=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell/data/activitypub/keys.json
-Environment=ACTIVITYPUB_STATE_PATH=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell/data/activitypub/state.sqlite
+Environment=ACTIVITYPUB_KEYS_PATH=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/software-services-section/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell/data/activitypub/keys.json
+Environment=ACTIVITYPUB_STATE_PATH=/home/emsenn/info/lib/emsenn/services/561-group/services/red-cup-engineering/services/software-services-section/web-services-section/services/capability-marketplace-services-section/services/federated-capability-offer-discovery-cell/data/activitypub/state.jsonl
 ExecStart=/home/emsenn/.config/nvm/versions/node/v24.13.1/bin/node bin/activitypub-server.mjs
 Restart=always
 RestartSec=2
