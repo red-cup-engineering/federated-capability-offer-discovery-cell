@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from "node:crypto";
-import { createR2RestClient, r2RestConfiguration } from "@red-cup-engineering/resource-brokerage-service-section/src/r2-rest.js";
+import { createR2RestClient, r2RestConfiguration } from "@red-cup-engineering/resource-brokerage-service-section/r2-rest";
 
 const encoder = new TextEncoder();
 const digest = (value) => createHash("sha256").update(value).digest("hex");
