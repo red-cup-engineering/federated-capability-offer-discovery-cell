@@ -32,6 +32,49 @@
         "network": {"type": "string", "minLength": 1}
       }
     },
+    "coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signedAgentCard", "packageOperation", "deploymentHealth", "resourceMeter", "settlementReturn"],
+      "properties": {
+        "signedAgentCard": {"$ref": "#/$defs/coordinate"},
+        "packageOperation": {"$ref": "#/$defs/coordinate"},
+        "deploymentHealth": {"$ref": "#/$defs/coordinate"},
+        "resourceMeter": {"$ref": "#/$defs/coordinate"},
+        "settlementReturn": {"$ref": "#/$defs/coordinate"}
+      }
+    },
     "expiresAt": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "coordinate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "href"],
+          "properties": {
+            "kind": {"const": "reference"},
+            "href": {"type": "string", "format": "uri"},
+            "operation": {"type": "string", "minLength": 1},
+            "consumes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "emits": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "invocation": {"type": "string", "format": "uri"},
+            "currentState": {"type": "string", "format": "uri"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "coordinate", "state", "reason"],
+          "properties": {
+            "kind": {"const": "org.emsenn.capability-offer.coordinate-residual.v1"},
+            "coordinate": {"enum": ["signedAgentCard", "packageOperation", "deploymentHealth", "resourceMeter", "settlementReturn"]},
+            "state": {"enum": ["unknown", "missing", "unreachable"]},
+            "reason": {"type": "string", "minLength": 1}
+          }
+        }
+      ]
+    }
   }
 }

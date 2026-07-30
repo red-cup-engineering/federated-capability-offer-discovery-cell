@@ -27,6 +27,13 @@ function offer(overrides = {}) {
     agentCard: CARD,
     authorization: {profile: "OCapN", grantRequired: true},
     price: {protocol: "x402", asset: "TEST", amount: "7", network: "eip155:5615610"},
+    coordinates: {
+      signedAgentCard: {kind: "reference", href: CARD},
+      packageOperation: {kind: "reference", href: "https://seller.example/package#test-operation", operation: "test-operation", consumes: ["application/rmn+cbor"], emits: ["application/rmn+cbor"], invocation: CARD, currentState: "https://seller.example/status"},
+      deploymentHealth: {kind: "reference", href: "https://seller.example/health"},
+      resourceMeter: {kind: "reference", href: "https://seller.example/meter"},
+      settlementReturn: {kind: "reference", href: "https://seller.example/settlement"},
+    },
     expiresAt: "2026-08-01T00:00:00.000Z",
     ...overrides,
   };
@@ -58,7 +65,7 @@ test("discovers one unexpired canonical offer within the supplied denominator", 
       });
       return [{activityId: "https://seller.example/activities/offer-1", objectBytes: encodedOffer.bytes}];
     },
-    record: async (record) => records.push(record),
+    record: async (record) => { records.push(record); return {settlement: "eip155:5615611:receipt"}; },
   }, {now: "2026-07-24T00:00:01.000Z"});
 
   assert.equal(result.completeness, "supplied-denominator-only");
@@ -69,8 +76,12 @@ test("discovers one unexpired canonical offer within the supplied denominator", 
   assert.equal(result.candidates[0].sku, offer().sku);
   assert.equal(result.candidates[0].authorization.profile, "OCapN");
   assert.equal(result.candidates[0].price.network, "eip155:5615610");
+  assert.deepEqual(result.candidates[0].coordinates.packageOperation.consumes, ["application/rmn+cbor"]);
+  assert.deepEqual(result.receipt, {settlement: "eip155:5615611:receipt"});
+  assert.deepEqual(result.residuals, []);
   assert.equal(records.length, 1);
-  assert.equal(records[0].record, result);
+  assert.notEqual(records[0].record, result);
+  assert.equal(records[0].record.receipt, undefined);
 });
 
 test("canonical request identity is independent of record insertion order", async () => {
@@ -107,6 +118,22 @@ test("one endpoint failure is witnessed as a refusal without claiming ambient co
     reason: "signed ActivityPub observation unavailable",
   }]);
   assert.equal(result.completeness, "supplied-denominator-only");
+  assert.equal(result.residuals[0].state, "unreachable");
+  assert.equal(result.residuals[0].transition, "outbox-observation");
+});
+
+test("retains a partial v3 offer as typed coordinate residuals", async () => {
+  const incomplete = offer();
+  delete incomplete.coordinates;
+  const encodedOffer = canonical(incomplete);
+  const result = await discoverFederatedCapabilityOffers(request(), {
+    observe: async () => [{activityId: "https://seller.example/activities/offer-1", objectBytes: encodedOffer.bytes}],
+    record: async () => ({id: "rwil-receipt"}),
+  });
+  assert.equal(result.candidates.length, 1);
+  assert.equal(result.candidates[0].coordinates.resourceMeter.state, "missing");
+  assert.equal(result.residuals.length, 5);
+  assert.deepEqual(result.receipt, {id: "rwil-receipt"});
 });
 
 test("rejects duplicate outboxes before any observation", async () => {

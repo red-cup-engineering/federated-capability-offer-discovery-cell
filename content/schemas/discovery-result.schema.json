@@ -3,7 +3,7 @@
   "$id": "https://red-cup-engineering.github.io/federated-capability-offer-discovery-cell/schemas/discovery-result.schema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["kind", "provider", "request", "operation", "denominator", "completeness", "candidates", "refusals"],
+  "required": ["kind", "provider", "request", "operation", "denominator", "completeness", "candidates", "refusals", "residuals", "receipt"],
   "properties": {
     "kind": {"const": "org.emsenn.capability-offer-discovery.result.v1"},
     "provider": {"const": "urn:ame:federated-capability-offer-discovery-cell"},
@@ -29,7 +29,8 @@
           "agentCard": {"type": "string", "format": "uri"},
           "authorization": {"type": "object"},
           "price": {"type": "object"},
-          "expiresAt": {"type": "string", "format": "date-time"}
+          "expiresAt": {"type": "string", "format": "date-time"},
+          "coordinates": {"type": "object"}
         }
       }
     },
@@ -44,6 +45,8 @@
           "reason": {"type": "string", "minLength": 1}
         }
       }
-    }
+    },
+    "residuals": {"type": "array", "items": {"type": "object"}},
+    "receipt": {"type": "object"}
   }
 }
