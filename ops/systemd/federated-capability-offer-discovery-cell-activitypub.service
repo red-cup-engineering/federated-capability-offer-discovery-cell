@@ -12,7 +12,7 @@ Environment=HOST=127.0.0.1
 Environment=PORT=15614
 Environment=ACTIVITYPUB_ORIGIN=https://bare-cedar-fog.561.group
 Environment=ACTIVITYPUB_IDENTIFIER=capability-offer-discovery
-Environment=SETTLEMENT_CAIP2=eip155:5615610
+Environment=SETTLEMENT_CAIP2=eip155:5615611
 Environment=ACTIVITYPUB_KEYS_PATH=/home/emsenn/.config/red-cup-engineering/capability-offer-discovery/activitypub-keys.json
 ExecStart=/home/emsenn/.nvm/versions/node/v24.16.0/bin/node bin/activitypub-server.mjs
 Restart=always

@@ -62,7 +62,7 @@
         "refusalSchema": "content/schemas/discovery-refusal.schema.json",
         "protocol": "A2A 1.0 through a separately hireable protocol provider",
         "publication": "ActivityPub through a separately hireable protocol provider",
-        "chain": "eip155:5615610",
+        "chain": "eip155:5615611",
         "legacyCompatibility": false
       }
     }
