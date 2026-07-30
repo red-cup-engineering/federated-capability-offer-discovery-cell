@@ -40,9 +40,9 @@ gcloud run deploy "$service" \
   --port 8080 \
   --add-volume "name=cell-data,type=cloud-storage,bucket=$data_bucket,readonly=false" \
   --add-volume-mount "volume=cell-data,mount-path=/var/lib/capability-offer-discovery" \
-  --set-env-vars "HOST=0.0.0.0,CAPABILITY_OFFER_DISCOVERY_DATA_ROOT=/var/lib/capability-offer-discovery/settlement,SETTLEMENT_CAIP2=eip155:5615610" \
+  --set-env-vars "HOST=0.0.0.0,CAPABILITY_OFFER_DISCOVERY_DATA_ROOT=/var/lib/capability-offer-discovery/settlement,SETTLEMENT_CAIP2=eip155:5615611" \
   --update-secrets "/secrets/activitypub/keys.json=$activitypub_keys_secret:latest" \
-  --set-env-vars "ACTIVITYPUB_KEYS_PATH=/secrets/activitypub/keys.json,ACTIVITYPUB_IDENTIFIER=capability-offer-discovery,SETTLEMENT_CAIP2=eip155:5615610"
+  --set-env-vars "ACTIVITYPUB_KEYS_PATH=/secrets/activitypub/keys.json,ACTIVITYPUB_IDENTIFIER=capability-offer-discovery,SETTLEMENT_CAIP2=eip155:5615611"
 
 service_url=$(gcloud run services describe "$service" --project "$GOOGLE_CLOUD_PROJECT" --region "$region" --format='value(status.url)')
 gcloud run services update "$service" --project "$GOOGLE_CLOUD_PROJECT" --region "$region" \

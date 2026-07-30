@@ -14,7 +14,7 @@ ENV NODE_ENV=production \
     PORT=8080 \
  \
     CAPABILITY_OFFER_DISCOVERY_DATA_ROOT=/var/lib/capability-offer-discovery/settlement \
-    SETTLEMENT_CAIP2=eip155:5615610
+    SETTLEMENT_CAIP2=eip155:5615611
 USER node
 EXPOSE 8080
 CMD ["node", "bin/activitypub-server.mjs"]
