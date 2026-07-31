@@ -10,7 +10,7 @@
     "url": "https://github.com/red-cup-engineering/federated-capability-offer-discovery-cell.git"
   },
   "files": [
-    "bin",
+    "scripts",
     "content",
     "lib",
     "ops",
@@ -21,10 +21,10 @@
     "./protocol": "./src/protocol.mjs"
   },
   "bin": {
-    "serve-federated-capability-offer-discovery-activitypub": "./bin/activitypub-server.mjs"
+    "serve-federated-capability-offer-discovery-activitypub": "./scripts/activitypub-server.mjs"
   },
   "scripts": {
-    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check src/activitypub-r2-custody.mjs && node --check bin/execute-a2a-task.mjs && node --check bin/activitypub-server.mjs",
+    "check": "node --check lib/discovery.mjs && node --check src/protocol.mjs && node --check src/runtime.mjs && node --check src/adapter.mjs && node --check src/activitypub-offer.mjs && node --check src/activitypub-r2-custody.mjs && node --check scripts/execute-a2a-task.mjs && node --check scripts/activitypub-server.mjs",
     "test": "node --test test/*.test.mjs",
     "verify": "npm run check && npm test"
   },
@@ -38,6 +38,6 @@
     "@red-cup-engineering/activitypub-services-section": "1.0.2",
     "@red-cup-engineering/rmn-semantic-conformance": "6.0.1",
     "@red-cup-engineering/resource-brokerage-service-section": "2.0.3",
-    "@lenticule-science/rwil-rdf-projection-service": "1.0.2"
+    "@lenticule-science/witness-journal-rdf-projection-service": "1.0.2"
   }
 }

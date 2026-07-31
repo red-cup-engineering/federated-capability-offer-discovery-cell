@@ -2,7 +2,7 @@ import {resolve} from "node:path";
 import {listAddressedRmnOutbox} from "@red-cup-engineering/activitypub-services-section/rmn-outbox-client";
 import {semanticId} from "@red-cup-engineering/rmn-semantic-conformance";
 import {encodeRelationalValue} from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
-import {createSettlementStore} from "@lenticule-science/rwil-rdf-projection-service/client";
+import {createSettlementStore} from "@lenticule-science/witness-journal-rdf-projection-service/client";
 
 function identifyRelationalValue(value) {
   const encoded = encodeRelationalValue(value);
