@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { randomBytes } from "node:crypto";
 import { serveActivityPubProvider } from "@red-cup-engineering/activitypub-services-section/server";
-import { deliverActivity } from "@red-cup-engineering/activitypub-services-section/deliver";
+import { deliverActivity } from "@red-cup-engineering/activitypub-services-section";
 import { extractRmnActivity, projectRmnActivity } from "@red-cup-engineering/activitypub-services-section/rmn-activity";
 import { decodeSemantic, semanticBytes } from "@red-cup-engineering/rmn-semantic-conformance";
 import { decodeRelationalValue, encodeRelationalValue, RELATIONAL_VALUE_TYPE } from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
