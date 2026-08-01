@@ -14,7 +14,7 @@ function identifyRelationalValue(value) {
 export function createCapabilityOfferDiscoveryRuntime({root}) {
   const store = createSettlementStore({
     settlementRoot: root,
-    agentUrl: process.env.RWIL_RDF_AGENT ?? "http://127.0.0.1:19764/.well-known/agent-card.json",
+    agentUrl: process.env.WITNESS_JOURNAL_RDF_AGENT ?? "http://127.0.0.1:19764/.well-known/agent-card.json",
     caip2: process.env.SETTLEMENT_CAIP2 ?? "eip155:5615611",
   });
   return Object.freeze({

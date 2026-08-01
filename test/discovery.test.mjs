@@ -128,12 +128,12 @@ test("retains a partial v3 offer as typed coordinate residuals", async () => {
   const encodedOffer = canonical(incomplete);
   const result = await discoverFederatedCapabilityOffers(request(), {
     observe: async () => [{activityId: "https://seller.example/activities/offer-1", objectBytes: encodedOffer.bytes}],
-    record: async () => ({id: "rwil-receipt"}),
+    record: async () => ({id: "witness-journal-receipt"}),
   });
   assert.equal(result.candidates.length, 1);
   assert.equal(result.candidates[0].coordinates.resourceMeter.state, "missing");
   assert.equal(result.residuals.length, 5);
-  assert.deepEqual(result.receipt, {id: "rwil-receipt"});
+  assert.deepEqual(result.receipt, {id: "witness-journal-receipt"});
 });
 
 test("rejects duplicate outboxes before any observation", async () => {
