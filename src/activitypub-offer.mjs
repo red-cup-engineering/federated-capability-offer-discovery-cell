@@ -1,6 +1,6 @@
 import { materializeRmnActivity, ACTIVITYSTREAMS_PUBLIC } from "@red-cup-engineering/activitypub-services-section/rmn-activity";
-import { semanticBytes } from "@red-cup-engineering/rmn-semantic-conformance";
-import { encodeRelationalValue } from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
+import { semanticBytes } from "@red-cup-engineering/relation-model-notation-runtime";
+import { encodeRelationalValue } from "@red-cup-engineering/relation-model-notation-runtime/relational-value";
 
 const CAIP2 = /^eip155:[1-9][0-9]*$/u;
 const RESIDUAL_KIND = "org.emsenn.capability-offer.coordinate-residual.v1";
